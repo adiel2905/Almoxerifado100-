@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="PT-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almoxarifado-Movimentações</title>
+
+    <link rel="stylesheet" href="movimentacoes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+     <header class="header-principal">
+        <h1 class="titulo-header">
+            <img src="imagens/download.png" alt="Logo">
+        Almoxarifado
+        </h1>
+
+    </header>
+
+
+    <header class="segundo-header">
+        <nav>
+            <button onclick="window.location.href='dashboard.html'">
+                 Dashboard
+            </button>
+
+            <button onclick="window.location.href='movimentacoes.html'">
+                 Movimentação
+            </button>
+            
+           <button onclick="window.location.href='ppc.html'">
+                 PPC
+            </button>
+        </nav>
+    </header>
+
+    <div class="caixa-movimentacoes">
+
+        <div class="cabecalho-movimentacoes">
+
+            <h2>📋 Histórico de Movimentações</h2>
+
+            <div class="filtros-movimentacao">
+
+                <button onclick="gerarPDF()">
+                    📄 Gerar PDF
+                </button>
+
+                <input 
+                    id="pesquisaMovimentacao"
+                    type="text" 
+                    placeholder="🔍 Pesquisar produto..."
+                >
+
+                <select id="filtroMovimento" onchange="filtrarMovimentacoes()">
+
+                    <option value="">
+                        Todos
+                    </option>
+
+                    <option value="adicionado">
+                        🟢 Adicionado
+                    </option>
+
+                    <option value="retirado">
+                        🔴 Retirado
+                    </option>
+
+                    <option value="cadastrado">
+                        🔵 Cadastrado
+                    </option>
+
+                    <option value="apagado">
+                        ⚫ Apagado
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+       <div class="filtro-periodo">
+
+            <label>
+                Período:
+            </label>
+
+            <select id="filtroPeriodo" onchange="filtrarMovimentacoes()">
+
+                <option value="todos">
+                    Todos
+                </option>
+
+                <option value="hoje">
+                    Hoje
+                </option>
+
+                <option value="semana">
+                    Últimos 7 dias
+                </option>
+
+                <option value="mes">
+                    Este mês
+                </option>
+
+                <option value="semestre">
+                    Este semestre
+                </option>
+
+                <option value="ano">
+                    Este ano
+                </option>
+
+            </select>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Data e Hora</th>
+                    <th>Código</th>
+                    <th>Produto</th>
+                    <th>Tipo</th>
+                    <th>Antes</th>
+                    <th>Depois</th>
+                    <th>Quantidade</th>
+                    <th>Medida</th>
+                    <th>Responsável</th>
+                    <th>Movimento</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="lista-movimentacoes">
+
+            </tbody>
+
+
+        </table>
+
+    </div>
+
+    <script type="module" src="movimentacoes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+</body>

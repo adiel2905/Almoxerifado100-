@@ -1,0 +1,285 @@
+body {
+    margin: 0;
+    padding: 190px 0 0 0;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #f6f6f6;
+}
+
+
+/* Cabeçalho principal */
+
+.header-principal {
+    width: 100%;
+    background: linear-gradient(to right, #E92525, #F05A1A, #F58A0A);
+    padding: 18px;
+    box-sizing: border-box;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+/* Segundo menu */
+
+.segundo-header {
+    background-color: #ffffff;
+    padding: 8px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+    position: fixed;
+    top: 115px;   /* ajuste se necessário */
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+
+/* Menu */
+
+nav button {
+    background: none;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+
+nav button:hover {
+    background-color: #eeeeee;
+}
+
+.area-botoes {
+    position: fixed;
+    top: 140px; /* fica abaixo do segundo header */
+    left: 0;
+    width: 100%;
+    background-color: #f6f6f6;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    z-index: 998;
+
+    display: flex;
+    gap: 15px;
+}
+
+.movimentar {
+
+    background-color: #F58A0A;
+    color: white;
+
+    border: none;
+
+    padding: 7px 10px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.movimentar:hover {
+
+    background-color: #d96f00;
+
+    transform: translateY(-2px);
+
+}
+
+.titulo-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.titulo-header img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.vermelho{
+    color:red;
+    font-weight:bold;
+}
+
+
+.amarelo{
+    color:#d89b00;
+    font-weight:bold;
+}
+
+/* Área principal da página */
+
+.container {
+
+    width: 95%;
+    margin: 30px auto;
+
+}
+
+
+/* Caixa da tabela */
+
+.tabela-container {
+
+    width: 100%;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+
+}
+
+
+
+/* Tabela */
+
+table {
+
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+
+
+thead {
+
+    background-color: #f2f2f2;
+
+}
+
+
+
+th {
+
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+
+}
+
+
+
+td {
+
+    padding: 15px;
+    border-bottom: 1px solid #eeeeee;
+
+}
+
+.container {
+
+    width: 95%;
+    margin: 30px auto;
+
+}
+
+
+.titulo-pagina {
+
+    margin-bottom: 25px;
+
+}
+
+
+.barra-filtros {
+
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+
+}
+
+
+.barra-filtros input {
+
+    width: 350px;
+    padding: 12px;
+
+    border-radius: 8px;
+    border: 1px solid #ccc;
+
+    font-family: 'Montserrat';
+
+}
+
+
+
+.barra-filtros select {
+
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+
+}
+
+
+
+.tabela-container {
+
+    width: 100%;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-sizing: border-box;
+
+}
+
+
+
+.tabela-container table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+
+.tabela-container th {
+
+    padding: 15px;
+
+    text-align: left;
+
+}
+
+
+
+.tabela-container td {
+
+    padding: 15px;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+.verde{
+
+    color: green;
+    font-weight: bold;
+
+}

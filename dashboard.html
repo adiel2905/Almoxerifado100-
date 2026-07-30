@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="PT-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almoxarifado-Dashborad</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header-principal">
+        <h1 class="titulo-header">
+            <img src="imagens/download.png" alt="Logo">
+                Almoxarifado
+            </h1>
+
+        <button id="btn-sair">Sair</button>
+
+    </header>
+
+
+    <header class="segundo-header">
+        <nav>
+            <button onclick="window.location.href='dashboard.html'">
+                 Dashboard
+            </button>
+
+            <button onclick="window.location.href='movimentacoes.html'">
+                 Movimentação
+            </button>
+
+            <button onclick="window.location.href='ppc.html'">
+                 PPC
+            </button>
+
+        </nav>
+    </header>
+
+
+    <div class="area-botoes">
+
+        <button class="btn-adicionar" onclick="abrirFormulario()">
+            <span>⊕</span> Cadastrar
+        </button>
+
+    </div>
+
+
+    <div class="formulario" id="formulario">
+
+        <h2>Novo Produto</h2>
+
+        <input type="text" id="codigo" placeholder="Código">
+
+        <input type="text" id="nome" placeholder="Nome do produto">
+
+        <input type="number" id="quantidade" placeholder="Quantidade Inicial">
+
+
+        <select id="medida">
+            <option value="un">Unidade (un)</option>
+            <option value="kg">Quilo (kg)</option>
+            <option value="g">Grama (g)</option>
+            <option value="L">Litro (L)</option>
+            <option value="m">Metro (m)</option>
+        </select>
+
+
+        <input type="text" id="localizacao" placeholder="Localização">
+
+        <input type="text" id="tipo" placeholder="Tipo (Ferramenta, EPI, Material...)">
+
+        <input type="text" id="informacao" placeholder="Informação adicional">
+
+        <label>Estoque mínimo
+
+            <input
+                type="number"
+                id="estoqueMinimo"
+                placeholder="Ex.: 20"
+            >
+
+        </label>
+
+        <button onclick="salvarProduto()">Salvar</button>
+
+    </div>
+
+    <div class="formulario" id="movimentacao">
+
+        <h2>Movimentar Produto</h2>
+
+        <p id="nomeProdutoMovimentacao"></p>
+
+        <select id="tipoMovimentacao">
+
+            <option value="entrada">
+                Entrada (+)
+            </option>
+
+            <option value="saida">
+                Saída (-)
+            </option>
+
+        </select>
+
+
+        <input 
+            type="number" 
+            id="quantidadeMovimentacao"
+            placeholder="Quantidade"
+        >
+
+
+        <input 
+            type="text" 
+            id="responsavelMovimentacao"
+            placeholder="Responsável"
+        >
+
+
+        <button onclick="confirmarMovimentacao()">
+            Confirmar
+        </button>
+
+
+    </div>
+
+
+
+
+    <div class="formulario" id="retirada">
+
+        <h2>Retirar Produto</h2>
+
+
+        <input 
+            type="text" 
+            id="pesquisaProduto" 
+            placeholder="Pesquisar produto..."
+            onkeyup="pesquisarProduto()"
+        >
+
+
+        <div id="resultadoPesquisa"></div>
+
+
+        <input 
+            type="number" 
+            id="quantidadeRetirar" 
+            placeholder="Quantidade a retirar"
+        >
+
+        <label for="responsavelRetirada">Responsável pela retirada
+            <input
+                type="text"
+                id="responsavelRetirada"
+                placeholder="Digite seu nome"
+                autocomplete="off"
+                required
+            >
+
+            <button onclick="retirarProduto()">
+                Confirmar Retirada
+            </button>
+        </label>
+
+    </div>
+
+
+
+
+    <div class="formulario" id="editarMedida" style="display:none;">
+
+        <h2>Editar Medida</h2>
+
+
+        <select id="novaMedida">
+
+            <option value="un">Unidade (un)</option>
+
+            <option value="kg">Quilo (kg)</option>
+
+            <option value="g">Grama (g)</option>
+
+            <option value="L">Litro (L)</option>
+
+            <option value="m">Metro (m)</option>
+
+        </select>
+
+
+        <button onclick="confirmarMedida()">
+            Confirmar
+        </button>
+
+    </div>
+
+
+
+
+
+    <div class="caixa-produtos">
+
+
+        <div class="cabecalho-produtos">
+
+            <h2>📦 Produtos Cadastrados</h2>
+
+
+           <div class="filtros">
+
+            <input 
+                type="text"
+                id="pesquisaTabela"
+                placeholder="🔍 Pesquisar produto..."
+                oninput="pesquisarTabela()"
+            >
+
+            <select id="filtroOrdenacao" onchange="ordenarProdutos()">
+
+                <option value="">Filtros</option>
+
+                <option value="recente">
+                    📅 Mais recente
+                </option>
+
+                <option value="antigo">
+                    📅 Mais antigo
+                </option>
+
+                <option value="maior">
+                    🔼 Maior código
+                </option>
+
+                <option value="menor">
+                    🔽 Menor código
+                </option>
+
+            </select>
+
+        </div>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Código</th>
+
+                    <th>Produto</th>
+
+                    <th>Tipo</th>
+
+                    <th>Quantidade</th>
+
+                    <th>Medida</th>
+
+                    <th>Localização</th>
+
+                    <th>Ações</th>
+
+                </tr>
+
+            </thead>
+
+
+
+            <tbody id="lista-produtos"></tbody>
+
+
+
+        </table>
+
+
+    </div>
+
+
+
+
+    <script type="module" src="dashboard.js"></script>
+
+
+</body>
+
+</html>

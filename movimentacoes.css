@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    padding: 190px 0 0 0;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #f6f6f6;
+}
+
+
+/* Cabeçalho principal */
+
+.header-principal {
+    width: 100%;
+    background: linear-gradient(to right, #E92525, #F05A1A, #F58A0A);
+    padding: 18px;
+    box-sizing: border-box;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+/* Segundo menu */
+
+.segundo-header {
+    background-color: #ffffff;
+    padding: 8px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+    position: fixed;
+    top: 115px;   /* ajuste se necessário */
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+
+/* Menu */
+
+nav button {
+    background: none;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+
+nav button:hover {
+    background-color: #eeeeee;
+}
+
+.area-botoes {
+    position: fixed;
+    top: 140px; /* fica abaixo do segundo header */
+    left: 0;
+    width: 100%;
+    background-color: #f6f6f6;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    z-index: 998;
+
+    display: flex;
+    gap: 15px;
+}
+
+.titulo-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.titulo-header img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.caixa-movimentacoes {
+
+    width:90%;
+    margin:30px auto;
+
+    background:white;
+
+    border-radius:14px;
+
+    padding:25px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,0.10);
+
+}
+
+
+.cabecalho-movimentacoes {
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+
+.cabecalho-movimentacoes h2 {
+
+    margin:0;
+    color:#333;
+
+}
+
+
+.filtros-movimentacao {
+
+    display:flex;
+    gap:10px;
+
+}
+
+
+.filtros-movimentacao input,
+.filtros-movimentacao select {
+
+    padding:11px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    font-family:'Montserrat', sans-serif;
+
+}
+
+
+.caixa-movimentacoes table {
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+.caixa-movimentacoes th {
+
+    background:#f1f1f1;
+
+    padding:14px;
+
+    text-align:left;
+
+    font-size:14px;
+
+}
+
+
+.caixa-movimentacoes td {
+
+    padding:14px;
+
+    border-bottom:1px solid #eee;
+
+}

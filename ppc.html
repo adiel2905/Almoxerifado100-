@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almoxerifado-PPC</title>
+    <link rel="stylesheet" href="ppc.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-principal">
+        <h1 class="titulo-header">
+            <img src="imagens/download.png" alt="Logo">
+        Almoxarifado
+        </h1>
+
+    </header>
+
+
+    <header class="segundo-header">
+        <nav>
+            <button onclick="window.location.href='dashboard.html'">
+                 Dashboard
+            </button>
+
+            <button onclick="window.location.href='movimentacoes.html'">
+                 Movimentação
+            </button>
+
+            <button onclick="window.location.href='PPC.html'">
+                 PPC
+            </button>
+
+        </nav>
+    </header>
+
+    <main class="container">
+
+
+    <div class="titulo-pagina">
+
+        <h1>
+            Produtos para Reposição
+        </h1>
+
+        <p>
+            Controle de estoque abaixo do mínimo
+        </p>
+
+    </div>
+
+
+
+    <section class="barra-filtros">
+
+        <input 
+        type="text"
+        id="pesquisarProduto"
+        placeholder="🔍 Pesquisar produto..."
+        >
+
+
+        <select id="filtroSituacao">
+
+            <option value="todos">
+                Todos
+            </option>
+
+            <option value="abaixo">
+                🔴 Abaixo do mínimo
+            </option>
+
+            <option value="alerta">
+                🟡 Alerta
+            </option>
+
+            <option value="normal">
+                🟢 Normal
+            </option>
+            
+        </select>
+
+
+    </section>
+
+
+
+    <section class="tabela-container">
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Código</th>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Mínimo</th>
+                    <th>Situação</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody id="tabelaProdutos">
+
+            </tbody>
+
+
+        </table>
+
+
+    </section>
+
+
+</main>
+        
+
+        <script type="module" src="ppc.js">
+
+        </script>
+
+</body>
+
+</html>
